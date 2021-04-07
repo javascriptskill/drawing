@@ -12,4 +12,9 @@
   height:5px;
   background-color:white;
   display:inline-block;
+  cursor: crosshair;
+}
+
+.pixel.drawn {
+  background-color: black;
 }
