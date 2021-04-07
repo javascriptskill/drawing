@@ -4,7 +4,7 @@ function main() {
 
   const pixels = []
 
-  for(let i=0; i<28000; i++) {
+  for(let i=0; i<7000; i++) {
     pixels.push($('<span class="pixel"></span>'))
   }
 

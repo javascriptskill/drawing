@@ -1,15 +1,19 @@
+body {
+  background-color:black;
+}
+
 .canvas {
-  width:1000px; /* 200 pixels */
-  height:700px; /* 140 pixels */
-  background-color:#ccc;
+  margin-top: 50px;
+  width:1000px; /* 100 pixels */
+  height:700px; /* 70 pixels */
+  background-color:white;
   margin-left:auto;
   margin-right:auto;
-  border:5px solid #ccc;
 }
 
 .pixel {
-  width:5px;
-  height:5px;
+  width:10px;
+  height:10px;
   background-color:white;
   display:inline-block;
   cursor: crosshair;
