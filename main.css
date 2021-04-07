@@ -1,7 +1,14 @@
 .canvas {
-  width:1000px;
-  height:700px;
+  width:1000px; /* 200 pixels */
+  height:700px; /* 140 pixels */
   background-color:#ccc;
   margin-left:auto;
   margin-right:auto;
+}
+
+.pixel {
+  width:5px;
+  height:5px;
+  background-color:black;
+  display:inline-block;
 }
