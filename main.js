@@ -1,4 +1,7 @@
 function main() {
+
+  // RENDER PIXELS
+
   const pixels = []
 
   for(let i=0; i<28000; i++) {
@@ -6,6 +9,8 @@ function main() {
   }
 
   $('.canvas').html(pixels)
+
+  // DRAW ON PIXELS
 
   let pressed = false
 
@@ -15,13 +20,8 @@ function main() {
     }
   })
 
-  $('.pixel').mousedown(function() {
-    pressed = true
-  })
-
-  $('.pixel').mouseup(function() {
-    pressed = false
-  })
+  $('.pixel').mousedown(() => pressed = true)
+  $('.pixel').mouseup(() => pressed = false)
 }
 
 $(main)
