@@ -4,11 +4,12 @@
   background-color:#ccc;
   margin-left:auto;
   margin-right:auto;
+  border:5px solid #ccc;
 }
 
 .pixel {
   width:5px;
   height:5px;
-  background-color:black;
+  background-color:white;
   display:inline-block;
 }
