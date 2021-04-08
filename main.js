@@ -19,8 +19,15 @@ function main() {
   let pressed = false
 
   $('.pixel').mouseenter(function() {
-    if(pressed && selected === PENCIL){
+
+    if(!pressed) return
+
+    if(selected === PENCIL){
       $(this).addClass('drawn')
+    }
+
+    if(selected === ERASER){
+      $(this).removeClass('drawn')
     }
   })
 
