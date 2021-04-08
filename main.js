@@ -12,10 +12,14 @@ function main() {
 
   // DRAW ON PIXELS
 
+  const PENCIL = 'PENCIL'
+  const ERASER = 'ERASER'
+
+  let selected = PENCIL
   let pressed = false
 
   $('.pixel').mouseenter(function() {
-    if(pressed){
+    if(pressed && selected === PENCIL){
       $(this).addClass('drawn')
     }
   })
@@ -25,10 +29,6 @@ function main() {
 
   // TOOL SELECTION
 
-  const PENCIL = 'PENCIL'
-  const ERASER = 'ERASER'
-
-  let selected = PENCIL
   updateToolbar(selected)
 
   $('.tool').click(function() {
