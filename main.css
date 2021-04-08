@@ -42,6 +42,10 @@ body {
   border-color: #ccc;
 }
 
+.toolbar .tool.selected:hover {
+  border-color: salmon;
+}
+
 .toolbar .tool img {
   width: 100%;
 }
