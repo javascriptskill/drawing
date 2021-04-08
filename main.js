@@ -27,6 +27,11 @@ function main() {
     }
 
     if(selected === ERASER){
+      const currPixelId = $(this).index()
+      const neigbors = getNeigbors(currPixelId)
+      neigbors.forEach((x) => {
+        x.removeClass('drawn')
+      })
       $(this).removeClass('drawn')
     }
   })
@@ -56,6 +61,24 @@ function main() {
 function updateToolbar(selected) {
   $('.tool').removeClass('selected')
   $('[data-name='+selected+']').addClass('selected')
+}
+
+function getNeigbors(id) {
+  /*
+  -101  -100   -99
+    -1          +1
+   +99  +100  +101
+  */
+  return [
+    $('.pixel').eq(id - 101),
+    $('.pixel').eq(id - 100),
+    $('.pixel').eq(id -  99),
+    $('.pixel').eq(id -   1),
+    $('.pixel').eq(id +   1),
+    $('.pixel').eq(id +  99),
+    $('.pixel').eq(id + 100),
+    $('.pixel').eq(id + 101)
+  ]
 }
 
 $(main)
