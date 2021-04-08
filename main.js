@@ -12,18 +12,20 @@ function main() {
 
   // DRAW ON PIXELS
 
-  const PENCIL = 'PENCIL'
-  const ERASER = 'ERASER'
+  const PENCIL = 'PENCIL' // tool type
+  const ERASER = 'ERASER' // tool type
+  const POINT = 'POINT'   // action type
+  const STROKE = 'STROKE' // action type
 
   let selected = PENCIL
   let pressed = false
 
-  $('.pixel').mouseenter(function() {
+  function edit(action, that) {
 
-    if(!pressed) return
+    if(!pressed && action === STROKE) return
 
     if(selected === PENCIL){
-      $(this).addClass('drawn')
+      that.addClass('drawn')
     }
 
     if(selected === ERASER){
@@ -32,9 +34,12 @@ function main() {
       neigbors.forEach((x) => {
         x.removeClass('drawn')
       })
-      $(this).removeClass('drawn')
+      that.removeClass('drawn')
     }
-  })
+  }
+
+  $('.pixel').mouseenter(function() { edit(STROKE, $(this)) })
+  $('.pixel').click(function() { edit(POINT, $(this)) })
 
   $('.pixel').mousedown(() => pressed = true)
   $('.pixel').mouseup(() => pressed = false)
